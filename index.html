@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tailwind.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+<style>
+
+@media screen and (min-width: 862px) {
+  .md-t {
+    margin-top: 100px;
+  }
+
+}
+
+@media screen and (max-width: 863px) {
+  .md-t  {
+    margin-top: 180px;
+  }
+
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+}
+
+.nav-down {
+  top: -40px;
+}
+
+@media screen and (min-width: 1121px) {
+  .m-bg  {
+    margin-bottom: -535px;
+  }
+
+}
+
+@media screen and (max-width: 1120px) {
+  .m-bg {
+    margin-bottom: -650px;
+  }
+
+}
+
+@media screen and (max-width: 862px) {
+  .m-bg {
+    margin-bottom: -680px;
+  }
+
+  .pd-t {
+  padding-top: 85px;
+}
+
+}
+
+@media screen and (max-width: 718px) {
+  .m-bg {
+    margin-bottom: -700px;
+  }
+}
+
+@media screen and (max-width: 604px) {
+  .m-bg {
+    margin-bottom: -790px;
+  }
+}
+
+a > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+a > a:hover {
+  color: #000;
+}
+a > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a > a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+  .read-more {
+  
+  width: 145px;
+  height: 65px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  
+}
+
+.read-more span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.read-more span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.read-more:hover span {
+  padding-right: 25px;
+}
+
+.read-more:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.read-more-2 {
+  
+  width: 145px;
+  height: 65px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  
+}
+
+.read-more-2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.read-more-2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.read-more-2:hover span {
+  padding-right: 25px;
+}
+
+.read-more-2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+  @media (min-width: 957px) {
+      .menu-bar {
+        display: none;
+      }
+  }
+
+  @media (min-width: 957px) and (max-width: 1100px) {
+      .menu-bar {
+        display: none;
+      }
+  }
+  
+  @media (max-width: 957px) {
+      .menu-bar {
+        visibility: visible;
+      }
+  }
+
+  @media (min-width: 768px) {
+      .header-size {
+          font-size: 4.5rem;
+          line-height: 1;
+        }
+
+ 
+    }
+    @media (max-width: 768px) {
+        .header-size {
+          font-size: 3.75rem;
+          line-height: 1;
+        }
+    }
+
+    @media (min-width: 768px) {
+      .sub-header-size {
+          font-size: 2.25rem;
+          line-height: 1;
+        }
+
+ 
+    }
+    @media (max-width: 768px) {
+        .sub-header-size {
+          font-size: 2rem;
+          line-height: 1;
+        }
+    }
+
+    ::-moz-selection { 
+  background: #F9FAFC;
+}
+
+::selection {
+  background: #F9FAFC;
+}
+
+</style>
+
+</head>
+
+<body>
+  
+  <!-- Nav bar -->
+  <div class="flex flex-row p-6">
+    <a href="file:///Users/iavian/Desktop/Koli/index.html"> <img src="./logo.png" style="width: 100px; height: 100px;" alt="logo" class="mt-5"> </a>
+    <div class="fixed right-0 mr-16 md:relative max-h-14 z-10 rounded-lg mt-10 md:ml-5 md:shadow-lg  md:visible flex flex-col ml-10 md:flex-row invisible" id="myTopnav">
+      <a href="file:///Users/iavian/Desktop/Koli/index.html" class="bg-green-600 text-white p-4 md:rounded-bl-lg md:rounded-tl-lg rounded-tr-lg rounded-tl-lg md:rounded-r-none ">Home</a>
+       <a href="file:///Users/iavian/Desktop/Koli/tourist_attractions.html" class="hover:text-green-600 p-4 bg-white md:border-r border-b">Tourist attractions</a>
+       <a href="file:///Users/iavian/Desktop/Koli/travel_guide.html" class="hover:text-green-600 bg-white p-4 md:border-r border-b">Travel guide</a>
+       <a href="#contact" class="hover:text-green-600 bg-white p-4 md:border-r border-b">Hotels / Hospitals</a>
+       <a href="#contact" class="hover:text-green-600 bg-white p-4 md:border-r border-b">Products</a>
+       <a href="#about" class="hover:font-bold hover:text-green-600 bg-white p-4 md:border-r border-b rounded-bl-lg rounded-br-lg md:rounded-tr-lg md:rounded-bl-none"> Contact us</a>
+    </div>
+    <i class="fa fa-bars menu-bar pt-16 pr-10 visible md:hidden fixed right-0 hover:text-green-700" onclick="toggleMenu()"></i>
+  </div>
+
+<!-- Iamge show -->
+<div class="splide">
+	<div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide"> <img src="./slide-1.jpg"> </li>
+      <li class="splide__slide"> <img src="./slide-2.jpg" alt=""> </li>
+      <li class="splide__slide"> <img src="./slide-3.jpg"> </li>
+      <li class="splide__slide"> <img src="./slide-4.jpg"> </li>
+      <li class="splide__slide"> <img src="./slide-5.jpg"> </li>
+		</ul>
+  </div>
+  <div class="splide__progress">
+		<div class="splide__progress__bar"></div>
+	</div>
+</div>
+
+<p class="mt-0 pt-0 mb-3 pb-1 invisible">x</p>
+
+<!-- Visisble -->
+<div class="m-bg z-10 relative top-0 bg-white border-4 border-green-600 border-separate shadow-lg rounded-3xl" style="margin-top: 30px; margin-left: 20px; margin-right: 20px; padding-left: 35px; padding-right: 5px; padding-bottom: 1rem;">
+  <div class=" header-size font-extrabold text-center" style="margin-top: 14px; padding-bottom: 12px;">
+  <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-600 to-green-800" style="font-family: 'Noto Sans JP', sans-serif;">
+    About Koli hills
+  </span>
+  </div>
+  
+  <div>
+  <div style="font-family: 'Noto Sans JP', sans-serif; padding-top: 11px;" class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700 sub-header-size font-extrabold text-left" style="margin-top: 11px; padding-bottom: 12px;">
+    Attractions
+  </div>
+  <div style="font-family: 'Source Sans Pro', sans-serif; font-size: 17px; margin-top: 5px; margin-bottom: 12px;">
+    Koli hills is a offbeat hill station which is full of many breathtaking attractions and sites that won't make your trip feel boring. There are outstanding and ancient temples like the -- with hidden secrets and all of them are unique. There are many waterfalls that have great views and can cool off your day with constant rains of water coming from many natural rivers. There are also many famous view points that show the amazing mountain range and the ground down below. This will be a 3 to 4 trip because of the limited tourist attractions.
+  </div>  
+  </div>
+  
+  <a href="file:///Users/iavian/Desktop/Koli/tourist_attractions.html"><button class="read-more rounded-lg bg-green-400 text-white text-center text-2xl ring-4 ring-green-400 ring-opacity-50 text-opacity-100"><span>Read More </span></button></a>
+  
+  <div>
+    <div style="font-family: 'Noto Sans JP', sans-serif; padding-top: 11px;" class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700 sub-header-size font-extrabold text-left" style="margin-top: 11px; padding-bottom: 12px;">
+      Location
+    </div>
+    <div style="font-family: 'Source Sans Pro', sans-serif; font-size: 17px; margin-top: 5px; margin-bottom: 12px;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div> 
+    <a href="file:///Users/iavian/Desktop/Koli/travel_guide.html"><button class="read-more-2 rounded-lg bg-green-400 text-white text-center text-2xl ring-4 ring-green-400 ring-opacity-50 text-opacity-100"><span>Read More </span></button></a>
+  </div>
+  </div>
+
+
+<!-- Ivisible -->
+<div class="animate-pulse inv-bg z-0 top-0 bg-green-600 bg-opacity-100 transform rotate-2 border-separate shadow-lg rounded-3xl xl:pt" style="margin-left: 20px; margin-right: 20px; padding-left: 35px; padding-right: 5px; padding-bottom: 1rem;">
+
+  <div class=" header-size font-extrabold text-center" style="margin-top: 14px; padding-bottom: 12px;">
+    <span class="invisible bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-600 to-green-800" style="font-family: 'Noto Sans JP', sans-serif;">
+      About Koli hills
+    </span>
+    </div>
+    
+    <div>
+    <div style="font-family: 'Noto Sans JP', sans-serif; padding-top: 11px;" class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700 sub-header-size font-extrabold text-left" style="margin-top: 11px; padding-bottom: 12px;">
+      Attractions
+    </div>
+    <div style="font-family: 'Source Sans Pro', sans-serif; font-size: 17px; margin-top: 5px; margin-bottom: 12px;">
+      Koli hills is noice
+    </div>
+    </div>
+    
+    <a href="file:///Users/iavian/Desktop/Koli/tourist_attractions.html"><button class="read-more rounded-lg bg-green-400 text-white text-center text-2xl ring-4 ring-green-400 ring-opacity-50 text-opacity-100"><span>Read More </span></button></a>
+    
+    <div>
+      <div style="font-family: 'Noto Sans JP', sans-serif; padding-top: 11px;" class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700 sub-header-size font-extrabold text-left" style="margin-top: 11px; padding-bottom: 12px;">
+        Location
+      </div>
+      <div style="font-family: 'Source Sans Pro', sans-serif; font-size: 17px; margin-top: 5px; margin-bottom: 12px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div> 
+      <a href="file:///Users/iavian/Desktop/Koli/travel_guide.html"><button class="invisible read-more-2 rounded-lg bg-green-400 text-white text-center text-2xl ring-4 ring-green-400 ring-opacity-50 text-opacity-100"><span>Read More </span></button></a>
+    </div>
+    </div>
+  
+<!-- Credits -->
+<div class="md-t credits bg-gradient-to-r from-green-400 via-green-600 to-green-800 bg-opacity-50">
+<div class="text-white text-xl hover:underline p-5" style="font-family: 'Noto Sans JP', sans-serif; padding-top: 25px; padding-bottom: 0px;">
+<b>Credits:</b>
+</div>
+
+<pre class="text-white ml-0 underline" style="padding-bottom: 25px; font-size: 10px;">
+  <a href="https://hillsandwills.com/blog_images/92436.jpg"> https://www.hillsandwills.com href=https://hillsandwills.com/blog_images/92436.jpg</a>
+  <a href="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/126.jpg"> https://traveltriangle.com href=https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/126.jpg</a>
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Ftwttdc%2Fstatus%2F1047416549936525314&psig=AOvVaw1KFshB7tdLUSYg0eAEoCHK&ust=1610890132168000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDeo8rHoO4CFQAAAAAdAAAAABAJ"> https://twitter.com href=https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Ftwttdc%2Fstatus%2F1047416549936525314&psig=AOvVaw1KFshB7tdLUSYg0eAEoCHK&ust=1610890132168000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDeo8rHoO4CFQAAAAAdAAAAABAJ</a>
+  <a href="https://www.dangerousroads.org/images/stories/__Roads00000ag/Kolli%20Hills%20Road0.jpg"> https://www.dangerousroads.org href=https://www.dangerousroads.org/images/stories/__Roads00000ag/Kolli%20Hills%20Road0.jpg</a>
+  <a href="https://www.indiamart.com/proddetail/kolli-hills-black-pepper-21267583812.html">https://www.indiamart.com href=https://www.indiamart.com/proddetail/kolli-hills-black-pepper-21267583812.html</a>
+</pre>
+</div>
+
+
+
+<script>
+  
+  var splide = new Splide( '.splide', {
+    type: 'loop',
+    autoplay: true,
+    height: 600,
+    cover: true,
+    interval: 2500,
+    speed: 1000
+  } );
+
+  splide.on( 'autoplay:playing', function ( rate ) {
+	console.log( rate ); // 0-1
+  } );
+
+  splide.mount();
+
+  // Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    if (st > lastScrollTop && st > navbarHeight){
+
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+
+function toggleMenu() {
+  var x = document.getElementById("myTopnav");
+  if (x.className.includes(" visible")) {
+    x.className = x.className.replace(" visible", " invisible")
+  } else {
+    x.className = x.className.replace(" invisible", " visible")
+  }
+}
+
+module.exports = {
+    theme: {
+      margin: {
+       xs: '2px',
+       sm: '8px',
+       md: '16px',
+       lg: '24px',
+       xl: '48px',
+      }
+    }
+  }
+
+</script>
+
+</body>
+
+</html>
